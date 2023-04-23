@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { useState } from 'react'
+import { marked } from 'marked'
+import './App.css'
 
-function App() {
+
+
+export default function App() {
+  const markdowndArr = "# h1\n\n ## h2\n\n ### h3";
+
+  const [text, setText] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="wraper">
+      <label id='editorWraper'>
+        <span>markdownd</span>
+        <textarea id='editor'
+        onChange={(e) => setText(e.target.value)}
+        value={text}
+        required
+        >  
+        </textarea>
+      </label>
+      <div id="preview" dangerouslySetInnerHTML={{ __html: marked(text) }}></div>
     </div>
-  );
+  )
 }
 
-export default App;
+
+
