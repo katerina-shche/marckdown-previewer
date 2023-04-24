@@ -21,7 +21,20 @@ export default function App() {
   You can also make text **bold**... whoa!\<br\>
   Or _italic_.\<br\>
   Or... wait for it... **_both!_**\<br\>
-  And feel free to go crazy ~~crossing stuff out~~.`
+  And feel free to go crazy ~~crossing stuff out~~.
+  There's also [links](https://www.freecodecamp.org), and\<br\>
+  > Block Quotes! \<br\>
+  > \<br\>
+  > And more block quotes \<br\>
+
+And if you want to get really crazy, even tables:
+
+Wild Header | Crazy Header | Another Header?
+------------ | ------------- | -------------
+Your content can | be here, and it | can be here....
+And here. | Okay. | I think we get it.
+
+  `
   
 
   const [text, setText] = useState(str);
