@@ -33,6 +33,7 @@
 #preview {
   width: 100vw;
   height: 50vh;
+  padding: 5%;
   flex-grow: 1;
   flex-shrink: 1;
   background-color: teal;
