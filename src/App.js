@@ -48,11 +48,17 @@ And here. | Okay. | I think we get it.
   `
   
 
-  const [text, setText] = useState(str);
+  const [text, setText] = useState(str)
+  const [isHorizontal, setIsHorisontal] = useState(false)
+  const body = document.querySelector('body')
+
+  if (body.offsetWidth > body.offsetHeight) {
+    setIsHorisontal(true)
+  } else { setIsHorisontal(false) }
 
   return (
-    <div id="wraper">
-      <label id='editorWraper'>
+    <div id="wrapper" style={{flexFlow: isHorizontal ? 'row wrap' : 'column nowrap'}} >
+      <label id='editorWrapper'>
         <span>markdownd</span>
         <textarea id='editor'
         onChange={(e) => setText(e.target.value)}
