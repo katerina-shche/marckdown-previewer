@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { marked } from 'marked'
 import './App.css'
 
@@ -49,25 +49,34 @@ And here. | Okay. | I think we get it.
   
 
   const [text, setText] = useState(str)
-  const [isHorizontal, setIsHorisontal] = useState(false)
-  const body = document.querySelector('body')
+  const [windowRatio, setWindowRatio] = useState(window.innerWidth / window.innerHeight);
 
-  if (body.offsetWidth > body.offsetHeight) {
-    setIsHorisontal(true)
-  } else { setIsHorisontal(false) }
+  useEffect(() => {
+    function handleResize() {
+      setWindowRatio(window.innerWidth / window.innerHeight);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <div id="wrapper" style={{flexFlow: isHorizontal ? 'row wrap' : 'column nowrap'}} >
-      <label id='editorWrapper'>
-        <span>markdownd</span>
+    <div id="wrapper" style={{flexFlow: windowRatio > 1 ? 'row nowrap' : 'column nowrap'}} >
+      <div id='editorWrapper' style={{width: windowRatio > 1 ? '50vw' : '100vw', height: windowRatio > 1 ? '100vh' : '50vh'}}>
+        <label for="editor" className='title'>Editor</label>
         <textarea id='editor'
         onChange={(e) => setText(e.target.value)}
         value={text}
         required
         >  
         </textarea>
-      </label>
+      
+      </div>
+      <div id='prewiewWrapper' style={{width: windowRatio > 1 ? '50vw' : '100vw', height: windowRatio > 1 ? '100vh' : '50vh'}} >
+      <h1 className='title'>Preview</h1>
       <div id="preview" dangerouslySetInnerHTML={{ __html: marked(text) }}></div>
+      </div>
     </div>
   )
 }
