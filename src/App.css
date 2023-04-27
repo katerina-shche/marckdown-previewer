@@ -71,3 +71,20 @@ code {
   width: 90%;
   align-content: stretch;
 }
+
+
+@media (min-aspect-ratio: 1/1) {
+  #editorWrapper {
+    width: 50vw; 
+    height: 100vh;}
+  }
+  /* styles go here for horizontal orientation */
+
+
+@media (max-aspect-ratio: 1/1) {
+  #editorWrapper {
+    width: 100vw;
+    height: 100vh;
+  }
+  /* styles go here for vertical orientation */
+}
