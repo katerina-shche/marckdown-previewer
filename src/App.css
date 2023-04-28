@@ -5,51 +5,13 @@
   box-sizing: border-box;
  }
 
-#wrapper {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-content: stretch;
-}
 
 
-#editorWrapper {
-  flex-grow: 1;
-  flex-shrink: 1;
-  background-color: blue;
-}
 
-#editor {
-  width: 100%;
-  height: 95%;
-  overflow: auto;
-}
 
-#preview {
-  width: 100%;
-  height: 95%;
-  padding: 5%;
-  flex-grow: 1;
-  flex-shrink: 1;
-  background-color: teal;
-  overflow: auto;
-}
 
-label {
-  display: block;
-  background-color: teal;
-}
 
-h1.title {
-  background-color: rgb(135,181,181);
-}
 
-.title {
-  height: 5%;
-  font-size: 2rem;
-  border: 2px rgba(17, 17, 17, 1) solid;
-  border-radius: 2px;
-}
 
 textarea {
   width: 100%;
@@ -74,17 +36,100 @@ code {
 
 
 @media (min-aspect-ratio: 1/1) {
+  #wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: stretch;
+  }
   #editorWrapper {
     width: 50vw; 
-    height: 100vh;}
+    height: 100vh;
   }
+  #editor {
+    width: 100%;
+    height: 95%;
+    padding: 5%;
+    overflow: auto;
+    border: 2px rgba(255, 255, 255, 0.5) solid;
+  }
+  #prewiewWrapper {
+      width: 50vw; 
+      height: 100vh;
+  }
+  #preview {
+    width: 100%;
+    height: 95%;
+    padding: 5%;
+    background-color: teal;
+    overflow: auto;
+    border: 2px rgba(255, 255, 255, 0.5) solid;
+  }
+  .title {
+    height: 5%;
+    font-size: 2rem;
+    border: 2px rgba(255, 255, 255, 0.5) solid;
+    border-radius: 2px;
+    padding-left: 5%;
+  }
+  label {
+    display: block;
+    background-color: teal;
+  }
+  h1.title {
+    background-color: rgb(135,181,181);
+  }
+}
   /* styles go here for horizontal orientation */
 
 
 @media (max-aspect-ratio: 1/1) {
-  #editorWrapper {
+  #wrapper {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: stretch;
+  }
+  
+  #editorWrapper {
+    width: 100vw;
+    height: 50vh;
+  }
+  #editor {
+    width: 100%;
+    height: 90%;
+    padding: 5%;
+    overflow: auto;
+    border: 2px rgba(255, 255, 255, 0.5) solid;
+  }
+
+  #prewiewWrapper {
+    width: 100vw;
+    height: 50vh;
+  }
+  #preview {
+    width: 100%;
+    height: 90%;
+    padding: 5%;
+    background-color: rgb(135,181,181);
+    overflow: auto;
+    border: 2px rgba(255, 255, 255, 0.5) solid;
+  }
+  .title {
+    height: 10%;
+    padding-left: 5%;
+    font-size: 2rem;
+    border: 2px rgba(255, 255, 255, 0.5) solid;
+    border-radius: 2px;
+  }
+  h1.title {
+    background-color: teal;
+  }
+  label {
+    display: block;
+    background-color: teal;
   }
   /* styles go here for vertical orientation */
 }
