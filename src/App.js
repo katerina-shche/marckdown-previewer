@@ -9,7 +9,7 @@ export default function App() {
   const str = `# Welcome to my React Markdown Previewer!
    ## This is a sub-heading...
    ### And here's some other cool stuff:
-   Heres some code, \`<div></div>\`, between 2 backticks.
+   Heres some code, \`<div></div>\`, between 2 backticks.\<br\>\<br\>
    \`\`\`javascript
    // this is multi-line code:
       function anotherExample(firstLine, lastLine) {
