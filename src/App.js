@@ -6,10 +6,13 @@ import './App.css'
 
 
 export default function App() {
-  const str = `# Welcome to my React Markdown Previewer!
-   ## This is a sub-heading...
-   ### And here's some other cool stuff:
-   Heres some code, \`<div></div>\`, between 2 backticks.\<br\>\<br\>
+  const str = `# Welcome to my React Markdown Previewer!\<br\>
+  and feel free to erase everything\<br\>
+  and type your own text :)\<br\>
+  \<br\>
+  ## This is a sub-heading...
+  ### And here's some other cool stuff:
+  Heres some code, \`<div></div>\`, between 2 backticks.\<br\>\<br\>
    \`\`\`javascript
    // this is multi-line code:
       function anotherExample(firstLine, lastLine) {
