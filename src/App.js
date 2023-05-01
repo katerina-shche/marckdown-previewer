@@ -19,7 +19,7 @@ export default function App() {
 
   ## This is a sub-heading...
   ### And here's some other cool stuff:
-  
+
   Heres some code, \`<div></div>\`, between 2 backticks.
 
 
@@ -68,7 +68,7 @@ And here. | Okay. | I think we get it.
   return (
     <div id="wrapper">
       <div id='editorWrapper'>
-        <label for="editor" className='title'>Editor</label>
+        <label htmlFor="editor" className='title'>Editor</label>
         <textarea id='editor'
         onChange={(e) => setText(e.target.value)}
         value={text}
