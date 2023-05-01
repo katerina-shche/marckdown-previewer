@@ -6,13 +6,23 @@ import './App.css'
 
 
 export default function App() {
-  const str = `# Welcome to my React Markdown Previewer!\<br\>
-  and feel free to erase everything\<br\>
-  and type your own text :)\<br\>
-  \<br\>
+
+  marked.setOptions({
+    breaks: true,
+  });
+
+  const str = `# Welcome to my React Markdown Previewer!
+
+  and feel free to erase everything
+  and type your own text :)
+
+
   ## This is a sub-heading...
   ### And here's some other cool stuff:
-  Heres some code, \`<div></div>\`, between 2 backticks.\<br\>\<br\>
+  
+  Heres some code, \`<div></div>\`, between 2 backticks.
+
+
    \`\`\`javascript
    // this is multi-line code:
       function anotherExample(firstLine, lastLine) {
@@ -21,14 +31,15 @@ export default function App() {
         }
       };
   \`\`\`
-  You can also make text **bold**... whoa!\<br\>
-  Or _italic_.\<br\>
-  Or... wait for it... **_both!_**\<br\>
+  You can also make text **bold**... whoa!
+  Or _italic_.
+  Or... wait for it... **_both!_**
   And feel free to go crazy ~~crossing stuff out~~.
-  There's also [links](https://www.freecodecamp.org), and\<br\>
-  > Block Quotes! \<br\>
-  > \<br\>
-  > And more block quotes \<br\>
+  There's also [links](https://www.freecodecamp.org), and
+  > Block Quotes!
+  >
+  > And more block quotes
+
 
 And if you want to get really crazy, even tables:
 
