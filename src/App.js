@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { marked } from 'marked'
 import './App.css'
 
@@ -26,7 +26,7 @@ export default function App() {
    \`\`\`javascript
    // this is multi-line code:
       function anotherExample(firstLine, lastLine) {
-        if (firstLine == \"\`\`\`\" && lastLine == \"\`\`\`\") {
+        if (firstLine == "\`\`\`" && lastLine == "\`\`\`") {
           return multiLineCode;
         }
       };
